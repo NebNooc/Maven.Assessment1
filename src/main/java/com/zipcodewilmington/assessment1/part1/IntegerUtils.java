@@ -6,12 +6,18 @@ package com.zipcodewilmington.assessment1.part1;
 public class IntegerUtils {
 
 
+
+
     /**
      * @param n integer value input by client
      * @return the sum of all integers between 0 and not including `n`
      */
     public static Integer getSumOfN(Integer n) {
-        return null;
+        Integer result = 0;
+        for (int i = 1; i <= n; i++) {
+            result += i;
+        }
+        return result;
     }
 
     /**
@@ -19,7 +25,11 @@ public class IntegerUtils {
      * @return the product of all integers between 0 and not including `n`
      */
     public static Integer getProductOfN(Integer n) {
-        return null;
+        Integer result = 1;
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
     }
 
     /**
@@ -27,6 +37,10 @@ public class IntegerUtils {
      * @return integer with identical digits in the reverse order
      */
     public static Integer reverseDigits(Integer val) {
-        return null;
+
+        String str = String.valueOf(val);
+        String reverse = BasicStringUtils.reverse(str);
+        Integer val2 = Integer.valueOf(reverse);
+        return val2;
     }
 }
