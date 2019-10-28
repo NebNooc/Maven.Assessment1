@@ -1,9 +1,6 @@
 package com.zipcodewilmington.assessment1.part2;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by leon on 2/16/18.
@@ -85,7 +82,25 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+        int counter = 1, tempCount;
+        int leastPopular = (Integer) objectArray[0];
+        int temp = 0;
+        for (int i = 0; i < (objectArray.length - 1); i++)
+        {
+            temp = (Integer) objectArray[i];
+            tempCount = 0;
+            for (int j = 1; j < objectArray.length; j++)
+            {
+                if (temp == (Integer) objectArray[j])
+                    tempCount++;
+            }
+            if (tempCount <= counter)
+            {
+                leastPopular = temp;
+                counter = tempCount;
+            }
+        }
+        return leastPopular;
     }
 
     /**
